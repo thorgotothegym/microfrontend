@@ -2,7 +2,6 @@
   "name": "microfrontendmenu",
   "version": "0.1.0",
   "description": "display menu via json",
-  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js --colors",
     "build": "webpack-dev-server --compress",
@@ -28,6 +27,7 @@
     "react-router-dom": "^5.1.2",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
+    "single-spa": "^5.2.1",
     "single-spa-react": "^2.12.0",
     "style-loader": "^1.1.3"
   },
