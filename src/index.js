@@ -1,3 +1,5 @@
+import 'react-app-polyfill/ie11';
+
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -5,7 +7,7 @@ import singleSpaReact from 'single-spa-react';
 
 import BasicExample from './router/index';
 
-// ReactDOM.render(<BasicExample />, document.getElementById('app'));
+import './scss/main.scss';
 
 const reactLifecycles = singleSpaReact({
   React,

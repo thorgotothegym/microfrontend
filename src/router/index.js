@@ -6,7 +6,9 @@ import {
   Link
 } from "react-router-dom";
 
-import '../components/ui/Header.scss';
+import '../components/ui/Header/Header.scss';
+
+import { Search } from '../components/ui/Search/Search';
 
 
 export default function BasicExample() {
@@ -47,8 +49,14 @@ export default function BasicExample() {
 
 function Home() {
   return (
-    <div>
+    <div className="Home">
+      <div className="isReact">
+        <code>react app</code>
+      </div>
       <h2>Home</h2>
+      <div className="Search">
+        <Search/>
+      </div>
     </div>
   );
 }

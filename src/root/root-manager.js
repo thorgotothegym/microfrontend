@@ -1,6 +1,8 @@
 import * as singleSpa from 'single-spa';
 
-singleSpa.registerApplication('routeapp', () => import ('../index'), pathPrefix(''), { authToken: "d83jD63UdZ6RS6f70D0"} );
+export let DATA = '';
+
+singleSpa.registerApplication('routeapp', () => import ('../index'), pathPrefix(''), { data: DATA} );
 
 singleSpa.start();
 

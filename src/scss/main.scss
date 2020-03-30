@@ -2,6 +2,10 @@
 @import '_fonts.scss';
 @import '_mixin.scss';
 
+@import '../components/ui/Header/Header.scss';
+@import '../components/ui/Search/Search.scss';
+@import '../router/Home.scss';
+
 header {
   .title {
     @include titles ( $primaryColor, $bigFontSize, $fontSecundary, 1.2 )
@@ -14,8 +18,6 @@ header {
   }
 }
 body {
-  background-color: pink;
-  font-family: $fontPrimary;
   margin: 0 auto;
   width: $bodyWitdh;
 
