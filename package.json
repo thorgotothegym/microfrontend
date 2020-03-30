@@ -29,15 +29,18 @@
     "sass-loader": "^8.0.2",
     "single-spa": "^5.2.1",
     "single-spa-react": "^2.12.0",
-    "style-loader": "^1.1.3"
+    "style-loader": "^1.1.3",
+    "systemjs": "^6.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-modules-systemjs": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-system-register": "^1.6.0"
   }
 }
