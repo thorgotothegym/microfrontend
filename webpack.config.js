@@ -1,0 +1,48 @@
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module.exports = {
+  entry: './src/index.js',
+  mode: 'development',
+  devServer: {
+    port: 8080,
+    open: true,
+    contentBase: path.join(__dirname, 'dist'),
+    allowedHosts: [
+      'localhost:8080/',
+    ]
+  },
+  devtool: 'source-map',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader', // or MiniCssExtractPlugin.loader
+          { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
+          { loader: 'sass-loader', options: { sourceMap: true, implementation: require('sass') } }
+        ],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            }
+          }
+        ]
+      }
+    ],
+  },
+  plugins: [new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: '[id].css',
+  }),
+  ],
+};
