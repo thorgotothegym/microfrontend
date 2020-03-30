@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
+  devtool: 'source-map',
   devServer: {
     port: 8080,
     open: true,
@@ -12,10 +13,12 @@ module.exports = {
       'localhost:8080/',
     ]
   },
-  devtool: 'source-map',
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
   },
   module: {
     rules: [
@@ -37,6 +40,11 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"]
       }
     ],
   },
